@@ -20,8 +20,14 @@ This process may take a few minutes, and you'll see a lot of information scroll 
 
 
 To test if the docker build worked, try running
+MacOS
 ```
 ./docker-run.sh
+```
+
+Windows
+```
+docker-run.cmd
 ```
 
 You should get the following output similar to the following:
