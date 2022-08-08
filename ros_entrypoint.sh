@@ -1,13 +1,28 @@
-#!/bin/bash                                                                                                                                         
+#!/bin/bash
+
 set -e
 
-if [[ -z "$USER" || -z "$HOME" || -z "$USER_ID" || -z "$GROUP_ID" || -z "$WORKDIR" ]] ; then
+if [[ -z "$USER" || -z "$HOME" || -z "$WORKDIR" ]] ; then
     echo "One or more required environment variables is not defined."
     exit 1
 fi
 
-echo "Starting with USER: $USER, UID: $USER_ID, GID: $GROUP_ID"
-useradd -s /bin/bash -d "$HOME" -u "$USER_ID" -g "$GROUP_ID" -G sudo -N -o -c "local user" -M "$USER"
+if [[ -z "$USER_ID" ]] ; then
+    # Windows hosts do not have the same permission issues, we can
+    # skip USER_ID and GROUP_ID if not provided.
+    echo "Starting with USER: $USER"
+    useradd -s /bin/bash -d "$HOME" -G sudo -c "local user" -M "$USER"
+    USER_ID=`id -u $USER`
+    GROUP_ID=`id -g $USER`
+else
+    # MacOS and Linux hosts will write files with the user and group
+    # ids of the docker VM.  This usually results in files that are
+    # uneditable without a sudo chmod on the host.  Here we create a
+    # user with matching user and group ids.
+    # TODO: what if GROUP_ID does not exist?
+    echo "Starting with USER: $USER, UID: $USER_ID, GID: $GROUP_ID"
+    useradd -s /bin/bash -d "$HOME" -u "$USER_ID" -g "$GROUP_ID" -G sudo -N -o -c "local user" -M "$USER"
+fi
 
 # Fix up permissions for all parent directories of WORKDIR so that
 # they're owned by the user we just created.  All directories between
