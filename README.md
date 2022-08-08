@@ -19,7 +19,8 @@ docker-build.cmd
 This process may take a few minutes, and you'll see a lot of information scroll by.  If there is no error message, move on to the next step.  If there was an error message, it can usually be resolved by waiting a minute and running `./docker-build.sh` again until it works--most common problems are related to internet connections, either on your computer/wifi or on the server from which docker is downloading software.
 
 
-To test if the docker build worked, try running
+To test if the docker build worked, try running:
+
 MacOS
 ```
 ./docker-run.sh
