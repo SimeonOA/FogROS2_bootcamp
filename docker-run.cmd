@@ -13,6 +13,7 @@ docker run -it --rm ^
        --net=host ^
        --cap-add=NET_ADMIN ^
        --mount src=/%WORKDIR:\=/%,target=%LINUXWORKDIR%,type=bind ^
+       -v %USERPROFILE%\.aws:%LINUXHOME%/.aws ^
        --workdir %LINUXWORKDIR% ^
        fogros2_bootcamp
 
