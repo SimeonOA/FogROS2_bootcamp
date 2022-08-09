@@ -19,7 +19,7 @@ Default region name [None]: us-west-1
 
 Default output format [None]:
 
-## Part 1 : SETUP AND BASIC ROS
+## PART 1 : SETUP AND BASIC ROS
 1. Clone Github Repository
 ```
 git clone https://github.com/SimeonOA/FogROS2_bootcamp.git
@@ -87,7 +87,7 @@ colcon build
 ```
 
 
-## Part 2 : BASIC TALKER AND LISTENER EXAMPLES IN FOGROS2
+## PART 2: BASIC TALKER AND LISTENER EXAMPLES IN FOGROS2
 
 6. Create talker.py
 7. Create listener.py
@@ -142,5 +142,5 @@ nano talker.aws.launch.py
 15. Build the workspace again.
 
 
-## Part 3 GQCNN IN FOGROS2
+## PART 3: GQCNN IN FOGROS2
 TODO
