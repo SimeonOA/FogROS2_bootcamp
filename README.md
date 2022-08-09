@@ -4,6 +4,25 @@
 
 Install Docker Desktop if not already installed.
 
+
+## Setup AWS account and get API keys
+
+TODO
+```
+aws configure
+```
+AWS Access Key ID [None]: 
+AWS Secret Access Key [None]: 
+Default region name [None]: us-west-1
+Default output format [None]:
+
+## Section 1 : SETUP AND BASIC ROS
+1. Clone Github Repository
+```
+git clone https://github.com/SimeonOA/FogROS2_bootcamp.git
+```
+2. Build docker image and start the docker container
+
 From the checked out directory, run:
 
 MacOS
@@ -47,6 +66,78 @@ docker: Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is t
 Then it means you need to start Docker Desktop and wait until the Docker Deskop window shows that it has started.
 
 
-## Setup AWS account and get API keys
+3. Make a workspace:
+```
+mkdir -p ./fog_ws/src
+cd fog_ws/src
+```
 
+4. Create a package
+```
+ros2 pkg create --build-type ament_python fogros_camp
+```
+
+5. Build
+```
+cd ~/fog_ws
+colcon build
+```
+
+
+## Section 2 : BASIC TALKER AND LISTENER EXAMPLES IN FOGROS2
+
+6. Create talker.py
+7. Create listener.py
+
+8. Build the workspace again:
+```
+cd ~/fog_ws
+colcon build
+```
+
+9. Source the overlay
+```
+. install/setup.bash
+```
+
+10. Run local launch file.
+```
+cd ~/fog_ws/src/fogros_camp/launch
+ros2 launch talker.local.launch.py
+```
+
+11. Set environment variables. 
+```
+cd /
+export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+export CYCLONEDDS_URI=file://$(pwd)/opt/ros/humble/share/fogros2/configs/cyclonedds.ubuntu.$(lsb_release -rs | sed 's/\.//').xml
+```
+
+12. Edit package.xml (dependencies), setup.py(entry point), setup.cfg
+cd ..
+Fill name, email, license and description in package.xml
+Add <depend>fogros2</depend> to package.xml
+
+Fill name, email, license in setup.py
+Add entry points.
+
+
+13. Build the workspace again
+```
+colcon build
+```
+
+
+14. Create a launch folder and launch files : 
+```
+mkdir -p ~/fog_ws/src/fogros_camp/launch
+
+nano talker.local.launch.py 
+nano talker.aws.launch.py
+```
+
+15. Build the workspace again.
+
+
+## Section 3 GQCNN IN FOGROS2
 TODO
