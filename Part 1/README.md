@@ -56,10 +56,11 @@ docker: Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is t
 Then it means you need to start Docker Desktop and wait until the Docker Deskop window shows that it has started.
 
 
-3. Make a workspace:
+3. Make a workspace
+First start the  container again. Then in the container, run
 ```
 cd ~/FogROS2_bootcamp
-mkdir -p ./fog_ws/src
+mkdir -p fog_ws/src
 cd fog_ws/src
 ```
 
@@ -68,7 +69,7 @@ cd fog_ws/src
 ros2 pkg create --build-type ament_python fogros_camp
 ```
 
-5. Build
+5. Build the workspace
 ```
 cd ~/FogROS2_bootcamp/fog_ws
 colcon build
