@@ -57,6 +57,7 @@ Then it means you need to start Docker Desktop and wait until the Docker Deskop 
 
 
 3. Make a workspace
+
 First start the  container again. Then in the container, run
 ```
 cd ~/FogROS2_bootcamp
