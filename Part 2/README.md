@@ -36,6 +36,7 @@ Optional: Fill name, email, license and description in package.xml
 Add `<depend>fogros2</depend>` to `package.xml`
 
 Optional: Fill name, email, license in `setup.py`
+
 Add entry points.
 
 
