@@ -1,20 +1,26 @@
 ## PART 1 : SETUP AND BASIC ROS
 
-1. Clone Github Repository
+For this bootcamp, we recommend following the instructions below from your home directory.  It should work from other places, but you'll have to do all the path conversions on your own.
+
+1. Clone Github Repository below your home directory
 ```
+cd ~
 git clone https://github.com/SimeonOA/FogROS2_bootcamp.git
 ```
+
 2. Build docker image and start the docker container
 
 From the checked out directory, run:
 
 MacOS
 ```
+cd ~/FogROS2_bootcamp
 ./docker-build.sh
 ```
 
 Windows
 ```
+cd FogROS2_bootcamp
 docker-build.cmd
 ```
 
@@ -25,6 +31,7 @@ To test if the docker build worked, try running:
 
 MacOS
 ```
+cd ~/FogROS2_bootcamp
 ./docker-run.sh
 ```
 
@@ -39,7 +46,7 @@ $ ./docker-run.sh
 Starting with USER: jeffi, UID: 501, GID: 20
 jeffi@docker-desktop:~/FogROS2_bootcamp$ 
 ```
-If you got that, congrats!  Everything is working.  At this point type `CTRL-D` to exit.
+If you got that, congrats!  Everything is working.  At this point, type `CTRL-D` to exit.
 
 
 If you get:
@@ -51,6 +58,7 @@ Then it means you need to start Docker Desktop and wait until the Docker Deskop 
 
 3. Make a workspace:
 ```
+cd ~/FogROS2_bootcamp
 mkdir -p ./fog_ws/src
 cd fog_ws/src
 ```
@@ -62,6 +70,6 @@ ros2 pkg create --build-type ament_python fogros_camp
 
 5. Build
 ```
-cd ~/fog_ws
+cd ~/FogROS2_bootcamp/fog_ws
 colcon build
 ```
