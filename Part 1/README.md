@@ -8,6 +8,14 @@ cd ~
 git clone https://github.com/SimeonOA/FogROS2_bootcamp.git
 ```
 
+If you do not have `git`, you can go to [https://github.com/SimeonOA/FogROS2_bootcamp], then hit the green "code" button, and then "download zip".  Once you have the zip downloaded, extract the files so that `FogROS2_bootcamp` is in your home directory.
+```
+cd ~
+unzip ~/Downloads/FogROS2_bootcamp-main.zip
+mv FogROS2_bootcamp-main FogROS2_bootcamp
+```
+
+
 2. Build docker image and start the docker container
 
 From the checked out directory, run:
