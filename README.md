@@ -60,11 +60,12 @@ Run `aws configure`.  You will then be prompted for your keys.  This command doe
 
 ```
 % aws configure
-AWS Access Key ID [None]: 
-AWS Secret Access Key [None]: 
+AWS Access Key ID [None]: AKIAIOSFODNN7EXAMPLE
+AWS Secret Access Key [None]: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 Default region name [None]: us-west-1
 Default output format [None]:
 ```
+(leave output format blank)
 
 If all went well, you should then be able to test your credentials by running the following command [1](https://stackoverflow.com/a/42241040):
 
