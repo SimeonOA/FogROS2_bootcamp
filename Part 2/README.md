@@ -5,7 +5,7 @@
 
 8. Build the workspace again:
 ```
-cd ~/fog_ws
+cd ~/FogROS2_bootcamp/fog_ws
 colcon build
 ```
 
@@ -16,7 +16,7 @@ colcon build
 
 10. Run local launch file.
 ```
-cd ~/fog_ws/src/fogros_camp/launch
+cd ~/FogROS2_bootcamp/src/fogros_camp/launch
 ros2 launch talker.local.launch.py
 ```
 
@@ -24,27 +24,30 @@ ros2 launch talker.local.launch.py
 ```
 cd /
 export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
-export CYCLONEDDS_URI=file://$(pwd)/opt/ros/humble/share/fogros2/configs/cyclonedds.ubuntu.$(lsb_release -rs | sed 's/\.//').xml
+export CYCLONEDDS_URI=file:///opt/ros/humble/share/fogros2/configs/cyclonedds.ubuntu.2204.xml
 ```
 
 12. Edit package.xml (dependencies), setup.py(entry point), setup.cfg
+```
 cd ..
-Fill name, email, license and description in package.xml
-Add <depend>fogros2</depend> to package.xml
+```
+Optional: Fill name, email, license and description in package.xml
 
-Fill name, email, license in setup.py
+Add `<depend>fogros2</depend>` to `package.xml`
+
+Optional: Fill name, email, license in `setup.py`
 Add entry points.
 
 
 13. Build the workspace again
 ```
+cd ~/FogROS2_bootcamp/fog_ws
 colcon build
 ```
 
-
 14. Create a launch folder and launch files : 
 ```
-mkdir -p ~/fog_ws/src/fogros_camp/launch
+mkdir -p ~/FogROS2_bootcamp/fog_ws/src/fogros_camp/launch
 
 nano talker.local.launch.py 
 nano talker.aws.launch.py
