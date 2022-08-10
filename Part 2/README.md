@@ -5,9 +5,9 @@
 cd ~/FogROS2_bootcamp/fog_ws/src/fogros_camp/fogros_camp
 nano talker.py
 ```
-You can use any text editor of your choice but we use nano for the purposes of this workshop.
+You can use any text editor of your choice but we use `nano` for the purposes of this workshop.
 
-The talker.py  and listener.py files are provided in the Part 2 folder in the repository. We will take a look at the files. 
+The `talker.py`  and `listener.py` files are provided in the Part 2 folder in the repository. We will take a look at the files. 
 
 
 7. Create listener.py
@@ -21,7 +21,11 @@ nano listener.py
 cd ~/FogROS2_bootcamp/fog_ws/src/fogros_camp
 ```
 
-Add `<depend>fogros2</depend>` to `package.xml`
+Add `<depend>fogros2</depend>` to `package.xml`. 
+```
+nano package.xml
+```
+
 Add entry points in setup.py.  After line 22, add the following: 
 
 ```
@@ -29,9 +33,12 @@ Add entry points in setup.py.  After line 22, add the following:
 "listener = fogros_camp.listener:main",
 ```
 
-Optional: Fill name, email, license and description in `package.xml`
-Optional: Fill name, email, license, desciption in `setup.py`
+Optional: Fill name, email, license and description in `package.xml`.
+
+Optional: Fill name, email, license, desciption in `setup.py`. 
 Note that the name name, email, license, desciption in both files must be the same. 
+
+In some cases, you may need to edit the `setup.cfg` but we do not need that for this workshop.
 
 
 9. Build the workspace again:
@@ -57,7 +64,7 @@ mkdir -p ~/FogROS2_bootcamp/fog_ws/src/fogros_camp/launch
 cd ~/FogROS2_bootcamp/fog_ws/src/fogros_camp/launch
 nano talker.local.launch.py 
 ```
-The talker.local.launch.py file is provided in the Part 2 folder in the repository. We will take a look it. 
+The `talker.local.launch.py` file is provided in the Part 2 folder in the repository. We will take a look at it. 
 
 
 13. Run local launch file.
@@ -67,11 +74,12 @@ ros2 launch talker.local.launch.py
 Here you can see both the talker node publishing and the listener node subscribing. 
 
 14. Create a cloud launch file (using FogROS2 and AWS)
+
 Now, we take the same local launch file and run the talker node on a provisioned aws cloud instance. FogROS2 handles the provisioning and setup of the cloud instance for us. 
 ```
 nano talker.aws.launch.py 
 ```
-The talker.aws.launch.py file is provided in the Part 2 folder in the repository. We will take a look at the files. 
+The `talker.aws.launch.py` file is provided in the Part 2 folder in the repository. We will take a look at the files. 
 
 15. Set environment variables. 
 ```
@@ -85,3 +93,4 @@ cd ~/FogROS2_bootcamp/fog_ws/src/fogros_camp/launch
 
 ros2 launch talker.aws.launch.py
 ```
+This process will take a few minutes, and you'll see a lot of information scroll by as FogROS2 provisions the cloud instance and installs all required 
