@@ -63,5 +63,3 @@ AWS Secret Access Key [None]:
 Default region name [None]: us-west-1
 Default output format [None]:
 ```
-## PART 3: GQCNN IN FOGROS2
-TODO
