@@ -2,12 +2,28 @@
 
 ## Before bootcamp instructions
 
-Install Docker Desktop if not already installed.
+Install Docker Desktop (if not already installed).  Select the appropriate link below and follow the instructions.  For Mac and Windows, this amounts to following the download link, and installing the software.
+
+* [Docker for Mac OS](https://docs.docker.com/desktop/install/mac-install/)
+* [Docker for Windows](https://docs.docker.com/desktop/install/windows-install/)
+* [Docker for Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
+
+## Setup AWS account
+
+Before starting, you have an AWS account.  If you do not have one already, you can [create an AWS account](https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-creating.html).  Note: this will require that you provide a credit card.  However, we will keep within the free-tier usage where possible.  If part of a formal session, you may be provided AWS credits as part of the session.
+
+## Create API credentials
+
+AWS provides [instructions on how to create an API key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html#Using_CreateAccessKey).  Their best practices recommend using an [IAM account](https://aws.amazon.com/premiumsupport/knowledge-center/create-access-key/) first.  Feel free to follow the best practices.  However, for this bootcamp, if you create the API key for the session, then delete them at the end of the session, you should be okay.
+
+From this process, you will need to obtain (1) an *Access key ID* (e.g., `AKIAIOSFODNN7EXAMPLE`), and (2) a *Secret Access Key* (e.g., `wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY`).  The two parts are similar to a username and password used for accessing a website, but in this case, are for accessing the interface that FogROS2 will use to talk to AWS.
+
+(Note: API = Application Program Interface)
+
+## Configure your AWS credentials
 
 
-## Setup AWS account and get API keys
 
-TODO
 ```
 aws configure
 ```
