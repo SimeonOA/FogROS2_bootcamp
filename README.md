@@ -36,7 +36,7 @@ aws_secret_access_key=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 A quick way to do this is to open a terminal and run the following commands (but with your access key id and secret access key from the previous step):
 ```
 mkdir -p ~/.aws
-echo "[default] > ~/.aws/credentials
+echo "[default]" > ~/.aws/credentials
 echo "aws_access_key_id=AKIAIOSFODNN7EXAMPLE" >> ~/.aws/credentials
 echo "aws_secret_access_key=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY" >> ~/.aws/credentials
 ```
