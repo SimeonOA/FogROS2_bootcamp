@@ -93,4 +93,6 @@ cd ~/FogROS2_bootcamp/fog_ws/src/fogros_camp/launch
 
 ros2 launch talker.aws.launch.py
 ```
-This process will take a few minutes, and you'll see a lot of information scroll by as FogROS2 provisions the cloud instance and installs all required 
+This process will take a few minutes, and you'll see a lot of information scroll by as FogROS2 provisions the cloud instance and installs all required software and dependencies. Finally, you would see both the cloud node and the local node communicating. 
+
+Typing CTRL-C kills the local instance (e.g., listener) the first time and then the cloud instance the second time. 
