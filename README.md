@@ -24,6 +24,8 @@ From this process, you will need to obtain (1) an *Access key ID* (e.g., `AKIAIO
 
 For this part, there are two options.
 
+We highly recommend installing the AWS command line interface (CLI), as it can help facilitate interactions with AWS such as testing credentials.  Thus we recommend [installing the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html), and using Option 2 below.
+
 ### Option 1: Manually create a credential file
 
 We need to create a file `~/.aws/credentials` that looks like this (but with your access key id and secret access key from the previous step)
@@ -62,4 +64,19 @@ AWS Access Key ID [None]:
 AWS Secret Access Key [None]: 
 Default region name [None]: us-west-1
 Default output format [None]:
+```
+
+If all went well, you should then be able to test your credentials by running the following command [1](https://stackoverflow.com/a/42241040):
+
+```
+aws sts get-caller-identity
+```
+
+You should get output similar to the following:
+```
+{
+    "Account": "123456789012", 
+    "UserId": "AR#####:#####", 
+    "Arn": "arn:aws:sts::123456789012:assumed-role/role-name/role-session-name"
+}
 ```
